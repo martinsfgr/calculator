@@ -1,0 +1,14 @@
+body {
+  align-items: center;
+  background-color: #000000;
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+  height: 97vh;
+  justify-content: center;
+}
+
+#calculator {
+  background-color: #eaedef;
+  height: 520px;
+  width: 320px;
+}
