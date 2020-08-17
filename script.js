@@ -27,6 +27,11 @@ const operators = document.getElementsByClassName("operator");
 for (const operator of operators) {
   operator.addEventListener('click', () => {
     console.log("Operador clickado: ", operator.id);
+
+    if (operator.id == "clear") {
+      printHistory("");
+      printOutput("");
+    }
   })
 }
 
