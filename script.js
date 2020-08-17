@@ -21,3 +21,19 @@ const getOutput = () => {
 const printOutput = (num) => {
   document.getElementById("output-value").innerText = getFormattedNumber(num);
 }
+
+const operators = document.getElementsByClassName("operator");
+
+for (const operator of operators) {
+  operator.addEventListener('click', () => {
+    console.log("Operador clickado: ", operator.id);
+  })
+}
+
+const numbers = document.getElementsByClassName("number");
+
+for (const number of numbers) {
+  number.addEventListener('click', () => {
+    console.log("Número clickado: ", number.id);
+  })
+}
