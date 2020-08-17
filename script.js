@@ -2,6 +2,10 @@ const getFormattedNumber = (num) => {
   return Number(num).toLocaleString("pt-BR");
 }
 
+const reverseNumberFormat = (num) => {
+  return Number(num.replace('.', ''));
+}
+
 const getHistory = () => {
   return document.getElementById("history-value").innerText;
 }
