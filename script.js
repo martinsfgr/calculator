@@ -35,5 +35,12 @@ const numbers = document.getElementsByClassName("number");
 for (const number of numbers) {
   number.addEventListener('click', () => {
     console.log("Número clickado: ", number.id);
+
+    var output = reverseNumberFormat(getOutput());
+
+    if (output != NaN) {
+      output = output + number.id;
+      printOutput(output);
+    }
   })
 }
