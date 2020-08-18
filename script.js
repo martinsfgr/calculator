@@ -26,7 +26,7 @@ const operators = document.getElementsByClassName("operator");
 
 for (const operator of operators) {
   operator.addEventListener('click', () => {
-    console.log("Operador clickado: ", operator.id);
+    console.log("Operador clickado:", operator.id);
 
     if (operator.id == "clear") {
       printHistory("");
@@ -41,6 +41,33 @@ for (const operator of operators) {
         printOutput(output);
       }
     }
+
+    else {
+      let output = getOutput();
+      let history = getHistory();
+
+      if (output != "") {
+        console.log("Sim! O output é diferente de string vazia");
+
+        output = reverseNumberFormat(output);
+        history = history + output;
+
+        if (operator.id == "=") {
+          let result = eval(history);
+
+          console.log("Esse é o resultado da operação:", result);
+
+          printOutput(result);
+          printHistory("");
+        } 
+        
+        else {
+          history = history + operator.id;
+          printHistory(history);
+          printOutput("");
+        }
+      }
+    }
   })
 }
 
@@ -48,7 +75,7 @@ const numbers = document.getElementsByClassName("number");
 
 for (const number of numbers) {
   number.addEventListener('click', () => {
-    console.log("Número clickado: ", number.id);
+    console.log("Número clickado:", number.id);
 
     var output = reverseNumberFormat(getOutput());
 
