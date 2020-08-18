@@ -32,6 +32,15 @@ for (const operator of operators) {
       printHistory("");
       printOutput("");
     }
+
+    else if (operator.id == "backspace") {
+      let output = reverseNumberFormat(getOutput()).toString();
+
+      if (output) {
+        output = output.substr(0, output.length - 1);
+        printOutput(output);
+      }
+    }
   })
 }
 
