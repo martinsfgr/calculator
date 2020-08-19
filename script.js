@@ -1,4 +1,8 @@
 const getFormattedNumber = (num) => {
+  if (num == "-") {
+    return "";
+  }
+
   return Number(num).toLocaleString("pt-BR");
 }
 
