@@ -1,5 +1,5 @@
 const getFormattedNumber = (num) => {
-  if (num == "-") {
+  if (num == "-" || num == 0) {
     return "";
   }
 
@@ -69,6 +69,19 @@ for (const operator of operators) {
           history = history + operator.id;
           printHistory(history);
           printOutput("");
+        }
+      }
+
+      else if (output == "" && history != "") {
+        if (isNaN(history[history.length - 1])) {
+          history = history.substr(0, history.length - 1);
+
+          if (operator.id != "=") {
+            printHistory(history + operator.id);
+          } else {
+            printHistory("");
+            printOutput(eval(history));
+          }
         }
       }
     }
